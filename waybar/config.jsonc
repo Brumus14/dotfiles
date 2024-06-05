@@ -1,0 +1,47 @@
+{
+  "height": 32,
+  //"spacing": 4,
+  "modules-left": [
+    "clock",
+    "pulseaudio"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "network",
+    "temperature",
+    "cpu",
+    "memory"
+  ],
+  "clock": {
+    "interval": 1,
+    "format": "{:%H:%M}"
+  },
+  "pulseaudio": {
+    "format": "{volume}%"
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+        "active": "",
+        "default": ""
+    },
+    "on-click": "activate"
+  },
+  "network": {
+    "interval": 1,
+    "format": "NET {bandwidthTotalBytes}%"
+  },
+  "temperature": {
+    "format": "{temperatureC}°C"
+  },
+  "cpu": {
+    "interval": 1,
+    "format": "CPU {usage}%"
+  },
+  "memory": {
+    "interval": 1,
+    "format": "RAM {percentage}%"
+  }
+}

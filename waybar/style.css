@@ -1,0 +1,32 @@
+* {
+  font-family: "JetBrainsMono NFM";
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+window#waybar {
+  /*background-color: transparent;*/
+  background-color: green;
+}
+
+#workspaces * {
+  font-size: 0px;
+}
+
+#workspaces button {
+  border-radius: 16px;
+  background-color: white;
+  min-width: 16px;
+  min-height: 16px;
+  margin: 8px 4px;
+  transition: all 0.3s ease;
+}
+
+#workspaces button:hover {
+  background-color: white;
+}
+
+#workspaces button.visible {
+  min-width: 40px;
+}
