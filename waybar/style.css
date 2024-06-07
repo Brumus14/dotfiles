@@ -1,13 +1,28 @@
 * {
-  font-family: "JetBrainsMono NFM";
+  font-family: "JetBrainsMono NF";
+  color: black;
+  font-size: 14px;
   margin: 0;
   padding: 0;
   border: none;
 }
 
 window#waybar {
-  /*background-color: transparent;*/
-  background-color: green;
+  background-color: transparent;
+}
+
+*.module {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0 8px;
+  margin-top: 8px;
+  border-radius: 8px;
+  color: white;
+}
+
+#workspaces {
+  padding: 0 0 0 4px;
+  margin-left: 8px;
+  min-width: 124px;
 }
 
 #workspaces * {
@@ -17,16 +32,16 @@ window#waybar {
 #workspaces button {
   border-radius: 16px;
   background-color: white;
-  min-width: 16px;
-  min-height: 16px;
+  min-width: 12px;
+  min-height: 12px;
   margin: 8px 4px;
-  transition: all 0.3s ease;
-}
-
-#workspaces button:hover {
-  background-color: white;
+  transition: min-width 0.3s;
 }
 
 #workspaces button.visible {
-  min-width: 40px;
+  min-width: 32px;
+}
+
+#clock {
+  margin-right: 8px;
 }

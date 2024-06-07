@@ -1,47 +1,52 @@
 {
-  "height": 32,
-  //"spacing": 4,
+  "layer": "top",
+  "height": 36,
+  "spacing": 16,
   "modules-left": [
-    "clock",
-    "pulseaudio"
-  ],
-  "modules-center": [
     "hyprland/workspaces"
   ],
-  "modules-right": [
-    "network",
-    "temperature",
-    "cpu",
-    "memory"
+  "modules-center": [
   ],
+  "modules-right": [
+    "custom/cpu",
+    "custom/memory",
+    "custom/audio",
+    "clock"
+  ],
+  "hyprland/workspaces": {
+  },
+  "custom/cpu": {
+    "exec": "~/Documents/Scripts/FormattedCPUUsage.fish",
+    "interval": 1,
+    "format": " {}",
+    "tooltip": false,
+    "min-length": 8,
+    "max-length": 8
+  },
+  "custom/memory": {
+    "exec": "~/Documents/Scripts/FormattedMemoryUsage.fish",
+    "interval": 1,
+    "format": " {}",
+    "tooltip": false,
+    "min-length": 8,
+    "max-length": 8
+  },
+  "custom/audio": {
+    "exec": "~/Documents/Scripts/FormattedAudioVolume.fish",
+    "exec-on-event": true,
+    "on-scroll-up": "pamixer -i 1",
+    "on-scroll-down": "pamixer -d 1",
+    "interval": 1,
+    "format": " {}",
+    "tooltip": false,
+    "min-length": 8,
+    "max-length": 8
+  },
   "clock": {
     "interval": 1,
-    "format": "{:%H:%M}"
-  },
-  "pulseaudio": {
-    "format": "{volume}%"
-  },
-  "hyprland/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-        "active": "",
-        "default": ""
-    },
-    "on-click": "activate"
-  },
-  "network": {
-    "interval": 1,
-    "format": "NET {bandwidthTotalBytes}%"
-  },
-  "temperature": {
-    "format": "{temperatureC}°C"
-  },
-  "cpu": {
-    "interval": 1,
-    "format": "CPU {usage}%"
-  },
-  "memory": {
-    "interval": 1,
-    "format": "RAM {percentage}%"
+    "format": "  {:%H:%M}",
+    "tooltip": false,
+    "min-length": 8,
+    "max-length": 8
   }
 }
