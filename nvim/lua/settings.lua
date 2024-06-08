@@ -13,7 +13,7 @@ vim.opt.expandtab = true
 vim.opt.showmode = false
 vim.opt.cmdheight = 0
 
-vim.cmd("colorscheme kanagawa-wave")
+vim.cmd("colorscheme catppuccin-macchiato")
 
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*",
