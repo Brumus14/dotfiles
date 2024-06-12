@@ -7,6 +7,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		opts = {
 			ensure_installed = {
+				"texlab",
 				"clangd",
 				"marksman",
 				"rust_analyzer",

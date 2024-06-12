@@ -9,6 +9,10 @@ local noice = require("plugins.noice")
 local nvim_cmp = require("plugins.nvim-cmp")
 local dashboard_nvim = require("plugins.dashboard-nvim")
 local indent_blankline = require("plugins.indent-blankline")
+local vimtex = require("plugins.vimtex")
+local undotree = require("plugins.undotree")
+local auto_session = require("plugins.auto-session")
+local toggleterm = require("plugins.toggleterm")
 local colourscheme = require("plugins.colourscheme")
 
 return {
@@ -23,5 +27,9 @@ return {
 	nvim_cmp,
 	dashboard_nvim,
 	indent_blankline,
+	vimtex,
+	undotree,
+	auto_session,
+	toggleterm,
 	colourscheme,
 }

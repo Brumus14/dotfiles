@@ -21,3 +21,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		require("conform").format({ bufnr = args.buf })
 	end,
 })
+
+vim.o.undofile = true
+vim.o.undodir = vim.fn.expand("~/.config/nvim/undo")
+vim.o.undolevels = 1000
+vim.o.undoreload = 10000
