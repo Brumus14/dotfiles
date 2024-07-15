@@ -1,0 +1,15 @@
+(defwindow bar
+           :monitor 0
+           :geometry (geometry :x "0%"
+                               :y "8px"
+                               :width "1904px"
+                               :height "16px"
+                               :anchor "top center")
+           :stacking "fg"
+           :exclusive true
+           :focusable false
+           (box
+             :
+           (checkbox :onchecked "notify-send yo")
+           (label :text "12:05")):wq
+

@@ -1,0 +1,11 @@
+default-timeout=5000
+font=JetBrainsMono NF 10
+margin=8
+padding=16
+border-size=3
+max-visible=5
+background-color=#282828c8
+border-color=#468da8c8
+text-color=#ffffffc8
+width=250
+height=200

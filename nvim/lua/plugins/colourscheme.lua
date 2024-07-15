@@ -1,10 +1,11 @@
 return {
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-	},
-	{
-		"rebelot/kanagawa.nvim",
-		name = "kanagawa",
-	},
+    {
+        "catppuccin/nvim",
+    },
+    {
+        "rebelot/kanagawa.nvim",
+    },
+    {
+        "ellisonleao/gruvbox.nvim",
+    },
 }

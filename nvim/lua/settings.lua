@@ -10,16 +10,13 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
--- vim.opt.showmode = false
--- vim.opt.cmdheight = 0
-
-vim.cmd("colorscheme catppuccin-macchiato")
+vim.opt.showmode = false
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*",
-	callback = function(args)
-		require("conform").format({ bufnr = args.buf })
-	end,
+    pattern = "*",
+    callback = function(args)
+        require("conform").format({ bufnr = args.buf })
+    end,
 })
 
 vim.o.undofile = true
