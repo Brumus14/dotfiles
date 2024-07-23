@@ -1,15 +1,100 @@
-(defwindow bar
-           :monitor 0
-           :geometry (geometry :x "0%"
-                               :y "8px"
-                               :width "1904px"
-                               :height "16px"
-                               :anchor "top center")
-           :stacking "fg"
-           :exclusive true
-           :focusable false
-           (box
-             :
-           (checkbox :onchecked "notify-send yo")
-           (label :text "12:05")):wq
+(defpoll cpu_usage :interval "0.5s" "bash ~/Documents/Scripts/CPUUsage.sh")
+(defpoll memory_usage :interval "0.5s" "bash ~/Documents/Scripts/MemoryUsage.sh")
 
+(defwindow bar :class "bar"
+               :monitor 0
+               :geometry (geometry :x "0%"
+                                   :y "8px"
+                                   :width "1904px"
+                                   :height "24px"
+                                   :anchor "top center"
+                         )
+               :stacking "fg"
+               :exclusive true
+               :focusable false
+               (centerbox :class "inner-bar"
+                          :orientation "h"
+                          (left)
+                          (center)
+                          (right)
+               )
+)
+
+(defwidget left []
+  (box :class "left"
+       :halign "start"
+       :space-evenly false
+       (workspaces)
+  )
+)
+
+(defwidget center []
+  (box :class "center"
+       :halign "center"
+       :space-evenly false
+  )
+)
+
+(defwidget right []
+  (box :class "right"
+       :halign "end"
+       :space-evenly false
+       :spacing 24
+       (memory)
+       (cpu)
+       (date)
+       (time)
+  )
+)
+
+(defwidget workspaces []
+  (box :class "workspaces"
+       :halign "start"
+       (workspace-button :n 1)
+       (workspace-button :n 2)
+       (workspace-button :n 3)
+       (workspace-button :n 4)
+       (workspace-button :n 5)
+  )
+)
+
+(defwidget workspace-button [n]
+  (button :class "workspace-button"
+          :onclick "hyprctl dispatch workspace r~${n}"
+          "${n}"
+  )
+)
+
+(defwidget time []
+  (label :text {formattime(EWW_TIME, "%H:%M")})
+)
+
+(defwidget date []
+  (label :text {formattime(EWW_TIME, "%d-%m-%y")})
+)
+
+(defwidget cpu []
+  (box :class "cpu"
+       :space-evenly false
+       (label :text "")
+       (progress :halign "end"
+                 :valign "center"
+                 :value {cpu_usage}
+                 :min 0
+                 :max 100
+       )
+  )
+)
+
+(defwidget memory []
+  (box :class "memory"
+       :space-evenly false
+       (label :text "")
+       (progress :halign "end"
+                 :valign "center"
+                 :value {memory_usage}
+                 :min 0
+                 :max 100
+       )
+  )
+)

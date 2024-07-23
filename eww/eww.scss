@@ -1,0 +1,50 @@
+* {
+  all: unset;
+  font-family: "JetBrainsMono NF";
+  font-weight: 900;
+  font-size: 12 + 1;
+  color: #5492a1; // #5492a1 #2f2f2f
+}
+
+.bar {
+  background-color: #464646;
+}
+
+.inner-bar {
+  min-width: 1904px;
+}
+
+.right {
+  padding-right: 8px;
+}
+
+.workspace-button {
+  min-width: 24px;
+  min-height: 24px;
+  // transition: all 1s ease 0s;
+}
+
+.workspace-button:hover {
+  background-color: #525252;
+}
+
+.cpu label {
+  font-size: 16px;
+  padding-right: 8px;
+}
+
+.memory label {
+  font-size: 14px;
+  padding-right: 12px;
+}
+
+.cpu progressbar trough progress, .memory progressbar trough progress {
+  background-color: #5492a1;
+  min-height: 6px;
+}
+
+.cpu progressbar trough, .memory progressbar trough {
+  background-color: #525252;
+  min-height: 6px;
+  min-width: 100px;
+}
