@@ -1,21 +1,42 @@
 (defpoll cpu_usage :interval "0.5s" "bash ~/Documents/Scripts/CPUUsage.sh")
 (defpoll memory_usage :interval "0.5s" "bash ~/Documents/Scripts/MemoryUsage.sh")
+(defvar workspace0 "1")
+(defvar workspace1 "1")
 
-(defwindow bar :class "bar"
+(defwindow bar0
                :monitor 0
                :geometry (geometry :x "0%"
-                                   :y "8px"
-                                   :width "1904px"
+                                   :y "6px"
+                                   :width "1908px"
                                    :height "24px"
                                    :anchor "top center"
                          )
                :stacking "fg"
                :exclusive true
                :focusable false
-               (centerbox :class "inner-bar"
+               (centerbox :class "bar"
                           :orientation "h"
                           (left)
-                          (center)
+                          (center0)
+                          (right)
+               )
+)
+
+(defwindow bar1
+               :monitor 1
+               :geometry (geometry :x "0%"
+                                   :y "6px"
+                                   :width "1908px"
+                                   :height "24px"
+                                   :anchor "top center"
+                         )
+               :stacking "fg"
+               :exclusive true
+               :focusable false
+               (centerbox :class "bar"
+                          :orientation "h"
+                          (left)
+                          (center1)
                           (right)
                )
 )
@@ -28,10 +49,19 @@
   )
 )
 
-(defwidget center []
+(defwidget center0 []
   (box :class "center"
        :halign "center"
        :space-evenly false
+       (workspace0)
+  )
+)
+
+(defwidget center1 []
+  (box :class "center"
+       :halign "center"
+       :space-evenly false
+       (workspace1)
   )
 )
 
@@ -63,6 +93,14 @@
           :onclick "hyprctl dispatch workspace r~${n}"
           "${n}"
   )
+)
+
+(defwidget workspace0 []
+  (label :text {workspace0})
+)
+
+(defwidget workspace1 []
+  (label :text {workspace1})
 )
 
 (defwidget time []
