@@ -18,6 +18,7 @@ local nvim_dap = require("plugins.nvim-dap")
 local colourscheme = require("plugins.colourscheme")
 local themery = require("plugins.themery")
 local yuck = require("plugins.yuck")
+local hover = require("plugins.hover")
 -- local rustaceanvim = require("plugins.rustaceanvim")
 
 return {
@@ -41,5 +42,6 @@ return {
     colourscheme,
     themery,
     yuck,
+    hover,
     -- rustaceanvim,
 }

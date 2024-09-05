@@ -1,6 +1,6 @@
 default-timeout=5000
 font=JetBrainsMono NF 10
-margin=8
+margin=6
 padding=16
 border-size=3
 max-visible=5
