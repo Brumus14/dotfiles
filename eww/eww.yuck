@@ -30,7 +30,7 @@
                                    :height "24px"
                                    :anchor "top center"
                          )
-               :stacking "fg"
+               :stacking "bg"
                :exclusive true
                :focusable false
                (centerbox :class "bar"
