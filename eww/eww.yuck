@@ -1,5 +1,8 @@
 (defpoll cpu_usage :interval "0.5s" "bash ~/Documents/Scripts/CPUUsage.sh")
 (defpoll memory_usage :interval "0.5s" "bash ~/Documents/Scripts/MemoryUsage.sh")
+(defpoll battery_level :interval "0.5s" "cat /sys/class/power_supply/BAT0/capacity")
+(defvar volume_level "100")
+(defvar brightness_level "100")
 (defvar workspace0 "1")
 (defvar workspace1 "1")
 
@@ -70,6 +73,9 @@
        :halign "end"
        :space-evenly false
        :spacing 24
+       (brightness)
+       (volume)
+       (battery)
        (memory)
        (cpu)
        (date)
@@ -109,6 +115,47 @@
 
 (defwidget date []
   (label :text {formattime(EWW_TIME, "%d-%m-%y")})
+)
+
+(defwidget brightness []
+  (box :class "brightness"
+       :space-evenly false
+       (label :text "")
+       (scale :halign "end"
+              :valign "center"
+              :value {brightness_level}
+              :min 0
+              :max 100
+              :onchange "sudo light -S {}"
+       )
+  )
+)
+
+(defwidget volume []
+  (box :class "volume"
+       :space-evenly false
+       (label :text "")
+       (scale :halign "end"
+              :valign "center"
+              :value {volume_level}
+              :min 0
+              :max 150
+              :onchange "amixer set Master unmute | /home/brumus/Documents/Scripts/SetVolume.sh {}%"
+       )
+  )
+)
+
+(defwidget battery []
+  (box :class "battery"
+       :space-evenly false
+       (label :text "")
+       (progress :halign "end"
+                 :valign "center"
+                 :value {battery_level}
+                 :min 0
+                 :max 100
+       )
+  )
 )
 
 (defwidget cpu []
