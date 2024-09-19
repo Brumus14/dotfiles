@@ -1,11 +1,17 @@
 window {
     background-color: #5492a1;
     margin: 0;
-    padding: 10px;
+    padding: 0;
+}
+
+#scroll {
+    background-color: #464646;
+    border: 3px solid #5492a1;
+    border-top: none;
 }
 
 #outer-box {
-    margin: 3px;
+    /*margin: 3px;*/
 }
 
 #text {
@@ -20,6 +26,7 @@ window {
     margin: 0;
     font-family: "JetBrainsMono NF";
     background-color: #464646;
+    border: 3px solid #5492a1;
 }
 
 #input image {
