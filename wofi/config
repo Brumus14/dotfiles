@@ -1,3 +1,4 @@
 prompt=
 term-kitty
 show=drun
+hide_scroll=true
