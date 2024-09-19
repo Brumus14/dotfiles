@@ -1,0 +1,45 @@
+window {
+    background-color: #5492a1;
+    margin: 0;
+    padding: 10px;
+}
+
+#outer-box {
+    margin: 3px;
+}
+
+#text {
+    font-family: "JetBrainsMono NF";
+}
+
+#input {
+    border: none;
+    border-radius: 0;
+    color: white;
+    outline: none;
+    margin: 0;
+    font-family: "JetBrainsMono NF";
+    background-color: #464646;
+}
+
+#input image {
+    color: white;
+}
+
+#entry {
+    outline: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-color: #464646;
+}
+
+#entry #text {
+    padding: 7px;
+}
+
+#selected {
+    background-color: #525252;
+    border: none;
+    outline: none;
+}
