@@ -19,7 +19,6 @@ local colourscheme = require("plugins.colourscheme")
 local themery = require("plugins.themery")
 local yuck = require("plugins.yuck")
 local hover = require("plugins.hover")
--- local rustaceanvim = require("plugins.rustaceanvim")
 
 return {
     telescope,
@@ -43,5 +42,4 @@ return {
     themery,
     yuck,
     hover,
-    -- rustaceanvim,
 }

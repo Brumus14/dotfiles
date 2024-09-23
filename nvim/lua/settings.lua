@@ -23,3 +23,8 @@ vim.o.undofile = true
 vim.o.undodir = vim.fn.expand("~/.local/share/nvim/undo")
 vim.o.undolevels = 1000
 vim.o.undoreload = 10000
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    pattern = "*.vert,*.frag",
+    command = "set filetype=glsl",
+})

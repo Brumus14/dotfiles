@@ -9,7 +9,6 @@ return {
             "kanagawa-wave",
             "gruvbox",
         },
-        themeConfigFile = "~/.config/nvim/lua/theme.lua",
         livePreview = true,
     },
 }
