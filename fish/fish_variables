@@ -3,7 +3,7 @@
 SETUVAR --export --path CPLUS_INCLUDE_PATH:/usr/include
 SETUVAR --export EDITOR:nvim
 SETUVAR --export --path PATH:/home/brumus/Tools/vcpkg/\x1e/usr/bin\x1e/usr/local/sbin\x1e/usr/local/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl\x1e/home/brumus/\x2elocal/bin\x1e/home/brumus/\x2elocal/bin\x1e/home/brumus/\x2elocal/bin
-SETUVAR --export PF_INFO:ascii\x20os\x20wm\x20shell\x20uptime\x20pkgs\x20palette
+SETUVAR --export PF_INFO:ascii\x20title\x20os\x20wm\x20shell\x20uptime\x20palette
 SETUVAR --export STARSHIP_CONFIG:/home/brumus/\x2econfig/starship\x2etoml
 SETUVAR --export TOKYONIGHT:storm
 SETUVAR __fish_initialized:3400

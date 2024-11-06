@@ -19,6 +19,7 @@ local colourscheme = require("plugins.colourscheme")
 local themery = require("plugins.themery")
 local yuck = require("plugins.yuck")
 local hover = require("plugins.hover")
+local lsp_signature = require("plugins.lsp-signature")
 
 return {
     telescope,
@@ -42,4 +43,5 @@ return {
     themery,
     yuck,
     hover,
+    lsp_signature,
 }

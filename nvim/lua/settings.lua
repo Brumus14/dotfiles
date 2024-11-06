@@ -28,3 +28,21 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     pattern = "*.vert,*.frag",
     command = "set filetype=glsl",
 })
+
+vim.diagnostic.config({
+    update_in_insert = false,
+    severity_sort = true,
+    -- virtual_text = true,
+})
+
+vim.api.nvim_create_autocmd("InsertEnter", {
+    callback = function()
+        vim.diagnostic.disable(0)
+    end,
+})
+
+vim.api.nvim_create_autocmd("InsertLeave", {
+    callback = function()
+        vim.diagnostic.enable(0)
+    end,
+})

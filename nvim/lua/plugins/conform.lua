@@ -13,7 +13,7 @@ return {
             },
             clang_format = {
                 prepend_args = {
-                    "--style={IndentWidth: 4, AllowShortFunctionsOnASingleLine: None, SortIncludes: false}",
+                    "--style={IndentWidth: 4, AllowShortFunctionsOnASingleLine: None, SortIncludes: false, AlignArrayOfStructures: Left, PointerAlignment: Right, QualifierAlignment: Left, ReferenceAlignment: Right}",
                 },
             },
         },
