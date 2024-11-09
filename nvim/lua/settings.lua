@@ -12,6 +12,8 @@ vim.opt.expandtab = true
 
 vim.opt.showmode = false
 
+vim.g.mapleader = " "
+
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*",
     callback = function(args)

@@ -4,7 +4,6 @@
 (defvar volume_level "100")
 (defvar brightness_level "100")
 
-; ESH scripting for multiple monitors
 (defvar workspace0 "1")
 
 (defwindow bar0
@@ -15,7 +14,7 @@
                                    :height "24px"
                                    :anchor "top center"
                          )
-               :stacking "bg"
+               :stacking "bottom"
                :exclusive true
                :focusable false
                (centerbox :class "bar"
@@ -47,7 +46,7 @@
                                    :height "24px"
                                    :anchor "top center"
                          )
-               :stacking "bg"
+               :stacking "bottom"
                :exclusive true
                :focusable false
                (centerbox :class "bar"

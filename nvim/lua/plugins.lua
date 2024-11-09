@@ -20,6 +20,9 @@ local themery = require("plugins.themery")
 local yuck = require("plugins.yuck")
 local hover = require("plugins.hover")
 local lsp_signature = require("plugins.lsp-signature")
+local sneak = require("plugins.sneak")
+local vim_signature = require("plugins.vim-signature")
+local bufferline = require("plugins.bufferline")
 
 return {
     telescope,
@@ -44,4 +47,7 @@ return {
     yuck,
     hover,
     lsp_signature,
+    sneak,
+    vim_signature,
+    bufferline,
 }

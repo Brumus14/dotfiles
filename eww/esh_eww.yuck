@@ -4,7 +4,7 @@
 (defvar volume_level "100")
 (defvar brightness_level "100")
 
-; ESH scripting for multiple monitors
+<%# ESH scripting for multiple monitors -%>
 <% i=0; hyprctl -j monitors | jq '.[].id' | while read -r id; do -%>
 (defvar workspace<%= $i %> "1")
 
@@ -16,7 +16,7 @@
                                    :height "24px"
                                    :anchor "top center"
                          )
-               :stacking "bg"
+               :stacking "bottom"
                :exclusive true
                :focusable false
                (centerbox :class "bar"
