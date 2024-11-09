@@ -10,6 +10,7 @@ vim.keymap.set("n", "<C-l>", ":wincmd l<CR>")
 vim.keymap.set("n", "<C-i>", "<Cmd>nohlsearch|diffupdate|normal! <C-L><CR>")
 
 vim.api.nvim_set_keymap("n", "<leader>b", ":BufferLinePick<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>c", ":BufferLinePickClose<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>d", ":lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true })
 
 -- vim.keymap.set({ "n" }, "<C-k>", function()

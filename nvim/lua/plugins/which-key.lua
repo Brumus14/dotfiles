@@ -11,6 +11,7 @@ return {
         wk.register({
             ["<leader>"] = {
                 b = { name = "Pick Buffer" },
+                c = { name = "Pick Buffer To Close" },
                 d = { name = "Show Line Diagnostics" },
             },
         })
