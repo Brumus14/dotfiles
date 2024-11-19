@@ -1,0 +1,39 @@
+* {
+    background-color: #464646;
+    font: "JetbrainsMono NF 11";
+    text-color: white;
+    padding: 0;
+    margin: 0;
+    spacing: 0;
+}
+
+window {
+    border-color: #5492a1;
+    border: 3px solid;
+}
+
+inputbar {
+    border-color: #5492a1;
+    border: 0 0 3px 0;
+}
+
+prompt {
+    enabled: false;
+}
+
+entry {
+    padding: 7px;
+    cursor-width: 0;
+}
+
+listview {
+    lines: 11;
+}
+
+element-text {
+    padding: 7px;
+}
+
+element-text selected {
+    background-color: #525252;
+}

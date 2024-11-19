@@ -6,6 +6,7 @@ return {
             rust = { "rustfmt" },
             c = { "clang_format" },
             cpp = { "clang_format" },
+            javascript = { "biome" },
         },
         formatters = {
             stylua = {

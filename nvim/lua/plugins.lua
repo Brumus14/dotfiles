@@ -23,6 +23,7 @@ local lsp_signature = require("plugins.lsp-signature")
 local sneak = require("plugins.sneak")
 local vim_signature = require("plugins.vim-signature")
 local bufferline = require("plugins.bufferline")
+-- local marks = require("plugins.marks")
 
 return {
     telescope,
@@ -50,4 +51,5 @@ return {
     sneak,
     vim_signature,
     bufferline,
+    -- marks,
 }

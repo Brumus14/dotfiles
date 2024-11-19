@@ -1,5 +1,6 @@
+-- require("themery-theme")
 require("settings")
 require("lazy_setup")
-require("theme")
 require("lsp")
 require("keybinds")
+require("theme")
