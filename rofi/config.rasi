@@ -1,6 +1,5 @@
 configuration {
     terminal: "kitty";
-    modi: "drun";
 }
 
 @theme "theme"
