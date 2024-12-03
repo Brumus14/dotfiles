@@ -10,7 +10,7 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
-vim.opt.signcolumn = "auto:9"
+vim.opt.signcolumn = "auto:1"
 
 vim.opt.showmode = false
 
@@ -57,3 +57,11 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufDelete" }, {
         vim.opt.showtabline = buffer_count > 1 and 2 or 0
     end,
 })
+
+vim.o.foldcolumn = "1"
+vim.o.foldlevel = 99
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+
+vim.g.nvim_opened_dir = vim.fn.expand("%:p:h")

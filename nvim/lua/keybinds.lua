@@ -20,3 +20,21 @@ vim.api.nvim_set_keymap("n", "<leader>d", ":lua vim.diagnostic.open_float()<CR>"
 -- vim.keymap.set({ "n" }, "<Leader>k", function()
 --     vim.lsp.buf.signature_help()
 -- end, { silent = true, noremap = true, desc = "toggle signature" })
+
+vim.keymap.set("n", "zR", require("ufo").openAllFolds)
+vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
+
+vim.keymap.set("n", "<leader>qs", function()
+    require("persistence").load()
+end)
+vim.keymap.set("n", "<leader>qS", function()
+    require("persistence").select()
+end)
+vim.keymap.set("n", "<leader>ql", function()
+    require("persistence").load({ last = true })
+end)
+vim.keymap.set("n", "<leader>qd", function()
+    require("persistence").stop()
+end)
+
+vim.keymap.set("n", "<C-/>", ":ToggleTerm dir=" .. vim.g.nvim_opened_dir .. "<CR>")

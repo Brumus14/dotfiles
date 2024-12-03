@@ -11,7 +11,6 @@ local dashboard_nvim = require("plugins.dashboard-nvim")
 local indent_blankline = require("plugins.indent-blankline")
 local vimtex = require("plugins.vimtex")
 local undotree = require("plugins.undotree")
-local auto_session = require("plugins.auto-session")
 local toggleterm = require("plugins.toggleterm")
 local nvim_autopairs = require("plugins.nvim-autopairs")
 local nvim_dap = require("plugins.nvim-dap")
@@ -24,6 +23,10 @@ local sneak = require("plugins.sneak")
 local vim_signature = require("plugins.vim-signature")
 local bufferline = require("plugins.bufferline")
 -- local marks = require("plugins.marks")
+local nvim_scrollbar = require("plugins.nvim-scrollbar")
+local comment = require("plugins.comment")
+local nvim_ufo = require("plugins.nvim-ufo")
+local persistence = require("plugins.persistence")
 
 return {
     telescope,
@@ -39,7 +42,6 @@ return {
     indent_blankline,
     vimtex,
     undotree,
-    auto_session,
     toggleterm,
     nvim_autopairs,
     nvim_dap,
@@ -52,4 +54,8 @@ return {
     vim_signature,
     bufferline,
     -- marks,
+    nvim_scrollbar,
+    comment,
+    nvim_ufo,
+    persistence,
 }

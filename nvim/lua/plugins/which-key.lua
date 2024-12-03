@@ -10,9 +10,15 @@ return {
 
         wk.register({
             ["<leader>"] = {
-                b = { name = "Pick Buffer" },
-                c = { name = "Pick Buffer To Close" },
-                d = { name = "Show Line Diagnostics" },
+                b = { name = "Pick buffer" },
+                c = { name = "Pick buffer to close" },
+                d = { name = "Show line diagnostics" },
+                q = {
+                    s = { name = "Load current directory session" },
+                    S = { name = "Select session" },
+                    l = { name = "Load previous session" },
+                    d = { name = "Disable session saving" },
+                },
             },
         })
     end,
