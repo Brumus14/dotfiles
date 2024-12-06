@@ -10,7 +10,7 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
-vim.opt.signcolumn = "auto:1"
+vim.opt.signcolumn = "yes:1"
 
 vim.opt.showmode = false
 
@@ -58,7 +58,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufDelete" }, {
     end,
 })
 
-vim.o.foldcolumn = "1"
+vim.o.foldcolumn = "0"
 vim.o.foldlevel = 99
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99

@@ -54,7 +54,7 @@ return {
     vim_signature,
     bufferline,
     -- marks,
-    nvim_scrollbar,
+    -- nvim_scrollbar,
     comment,
     nvim_ufo,
     persistence,

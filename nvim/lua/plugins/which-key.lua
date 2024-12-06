@@ -14,6 +14,7 @@ return {
                 c = { name = "Pick buffer to close" },
                 d = { name = "Show line diagnostics" },
                 q = {
+                    name = "Session",
                     s = { name = "Load current directory session" },
                     S = { name = "Select session" },
                     l = { name = "Load previous session" },
