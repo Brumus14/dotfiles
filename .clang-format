@@ -1,0 +1,19 @@
+---
+IndentWidth: 4
+AlignAfterOpenBracket: Align
+ColumnLimit: 80
+BraceWrapping:
+  AfterControlStatement: false
+  AfterEnum: false
+  AfterFunction: false
+  AfterStruct: false
+  BeforeCatch: false
+  BeforeElse: false
+  IndentBraces: false
+BreakBeforeBraces: Attach
+SortIncludes: false
+PointerAlignment: Right
+QualifierAlignment: Left
+ReferenceAlignment: Right
+AllowShortFunctionsOnASingleLine: None
+AlignEscapedNewlines: Left
