@@ -4,23 +4,27 @@ return {
     init = function()
         vim.o.timeout = true
         vim.o.timeoutlen = 300
+
+        local wk = require("which-key")
+
+        wk.setup({
+            icons = {
+                mappings = false,
+            },
+        })
     end,
     config = function()
         local wk = require("which-key")
 
-        wk.register({
-            ["<leader>"] = {
-                b = { name = "Pick buffer" },
-                c = { name = "Pick buffer to close" },
-                d = { name = "Show line diagnostics" },
-                q = {
-                    name = "Session",
-                    s = { name = "Load current directory session" },
-                    S = { name = "Select session" },
-                    l = { name = "Load previous session" },
-                    d = { name = "Disable session saving" },
-                },
-            },
+        wk.add({
+            { "<leader>b", desc = "Pick buffer" },
+            { "<leader>c", desc = "Pick buffer to close" },
+            { "<leader>d", desc = "Show line diagnostics" },
+            { "<leader>q", desc = "Session" },
+            { "<leader>qS", desc = "Select session" },
+            { "<leader>qd", desc = "Disable session saving" },
+            { "<leader>ql", desc = "Load previous session" },
+            { "<leader>qs", desc = "Load current directory session" },
         })
     end,
 }
