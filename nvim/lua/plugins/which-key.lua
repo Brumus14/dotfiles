@@ -25,6 +25,8 @@ return {
             { "<leader>qd", desc = "Disable session saving" },
             { "<leader>ql", desc = "Load previous session" },
             { "<leader>qs", desc = "Load current directory session" },
+            { "<leader>f", desc = "Telescope" },
+            { "<leader>i", desc = "Clear search highlights" },
         })
     end,
 }

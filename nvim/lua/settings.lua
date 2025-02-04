@@ -29,7 +29,7 @@ vim.o.undolevels = 1000
 vim.o.undoreload = 10000
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-    pattern = "*.vert,*.frag",
+    pattern = "*.vert,*.frag,*.sc",
     command = "set filetype=glsl",
 })
 
