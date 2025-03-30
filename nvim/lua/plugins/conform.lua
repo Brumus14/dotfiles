@@ -7,6 +7,8 @@ return {
             c = { "clang_format" },
             cpp = { "clang_format" },
             javascript = { "biome" },
+            java = { "clang_format" },
+            tex = { "latexindent" },
         },
         formatters = {
             stylua = {

@@ -14,5 +14,13 @@ require("lspconfig")["vimls"].setup({})
 require("lspconfig")["html"].setup({})
 require("lspconfig")["cssls"].setup({})
 require("lspconfig")["ts_ls"].setup({})
-require("lspconfig")["r_language_server"].setup({})
+require("lspconfig")["r_language_server"].setup({
+    cmd = { "R", "--slave", "-e", "languageserver::run()" },
+    filetypes = { "r", "rmd" },
+})
 require("lspconfig")["hyprls"].setup({})
+require("lspconfig")["jdtls"].setup({
+    capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+})
+require("lspconfig")["zls"].setup({})
+require("lspconfig")["pyright"].setup({})

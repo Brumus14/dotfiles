@@ -2,9 +2,9 @@
 (defpoll memory_usage :interval "0.5s" "bash ~/Documents/Scripts/MemoryUsage.sh")
 (defpoll battery_level :interval "0.5s" "cat /sys/class/power_supply/BAT0/capacity")
 (defvar volume_level "100")
-(defvar brightness_level "100")
 
 (defvar workspace0 "1")
+(defpoll brightness_level0 :interval "1s" "~/Documents/Scripts/BrightnessControl.sh g eDP-1")
 
 (defwindow bar0
                :monitor 0
@@ -36,37 +36,19 @@
 (defwidget workspace0 []
   (label :text {workspace0})
 )
-(defvar workspace1 "1")
 
-(defwindow bar1
-               :monitor 1
-               :geometry (geometry :x "0%"
-                                   :y "6px"
-                                   :width "100%"
-                                   :height "24px"
-                                   :anchor "top center"
-                         )
-               :stacking "bottom"
-               :exclusive true
-               :focusable false
-               (centerbox :class "bar"
-                          :orientation "h"
-                          (left)
-                          (center1)
-                          (right)
-               )
-)
-
-(defwidget center1 []
-  (box :class "center"
-       :halign "center"
+(defwidget brightness []
+  (box :class "brightness"
        :space-evenly false
-       (workspace1)
+       (label :text "")
+       (scale :halign "end"
+              :valign "center"
+              :value {brightness_level0}
+              :min 0
+              :max 100
+              :onchange "~/Documents/Scripts/BrightnessControl.sh {} eDP-1"
+       )
   )
-)
-
-(defwidget workspace1 []
-  (label :text {workspace1})
 )
 
 (defwidget left []
@@ -117,20 +99,6 @@
 
 (defwidget date []
   (label :text {formattime(EWW_TIME, "%d-%m-%y")})
-)
-
-(defwidget brightness []
-  (box :class "brightness"
-       :space-evenly false
-       (label :text "")
-       (scale :halign "end"
-              :valign "center"
-              :value {brightness_level}
-              :min 0
-              :max 100
-              :onchange "sudo light -S {}"
-       )
-  )
 )
 
 (defwidget volume []
