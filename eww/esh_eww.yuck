@@ -26,7 +26,7 @@
                           :orientation "h"
                           (left)
                           (center<%= $id %>)
-                          (right)
+                          (right<%= $id %>)
                )
 )
 
@@ -42,7 +42,7 @@
   (label :text {workspace<%= $id %>})
 )
 
-(defwidget brightness []
+(defwidget brightness<%= $id %> []
   (box :class "brightness"
        :space-evenly false
        (label :text "")
@@ -55,6 +55,21 @@
        )
   )
 )
+
+(defwidget right<%= $id %> []
+  (box :class "right"
+       :halign "end"
+       :space-evenly false
+       :spacing 24
+       (brightness<%= $id %>)
+       (volume)
+       (battery)
+       (memory)
+       (cpu)
+       (date)
+       (time)
+  )
+)
 <% done -%>
 
 (defwidget left []
@@ -62,21 +77,6 @@
        :halign "start"
        :space-evenly false
        (workspaces)
-  )
-)
-
-(defwidget right []
-  (box :class "right"
-       :halign "end"
-       :space-evenly false
-       :spacing 24
-       (brightness)
-       (volume)
-       (battery)
-       (memory)
-       (cpu)
-       (date)
-       (time)
   )
 )
 
