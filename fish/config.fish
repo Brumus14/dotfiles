@@ -3,7 +3,7 @@ function fish_greeting
         if test "$TERM" != "linux"
             starship init fish | source
             pfetch
-            echo Welcome (set_color blue; echo -n $USER; set_color normal) to (set_color green; echo -n $hostname; set_color normal)
+            # echo Welcome (set_color blue; echo -n $USER; set_color normal) to (set_color green; echo -n $hostname; set_color normal)
         end
     end
 end

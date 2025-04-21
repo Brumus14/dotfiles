@@ -9,6 +9,8 @@ return {
             javascript = { "biome" },
             java = { "clang_format" },
             tex = { "latexindent" },
+            asm = { "asmfmt" },
+            go = { "goimports", "gofmt" },
         },
         formatters = {
             stylua = {

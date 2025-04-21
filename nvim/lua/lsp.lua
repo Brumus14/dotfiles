@@ -24,3 +24,4 @@ require("lspconfig")["jdtls"].setup({
 })
 require("lspconfig")["zls"].setup({})
 require("lspconfig")["pyright"].setup({})
+require("lspconfig")["gopls"].setup({})
