@@ -7,32 +7,32 @@ return {
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
         "hrsh7th/nvim-cmp",
-        -- "hrsh7th/cmp-nvim-lsp-signature-help",
+
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
+
         "onsails/lspkind.nvim",
     },
-    config = function()
+    opts = function()
         local cmp = require("cmp")
-
         local luasnip = require("luasnip")
-
         local lspkind = require("lspkind")
 
         require("luasnip.loaders.from_vscode").lazy_load()
+        require("luasnip.loaders.from_lua").lazy_load()
 
-        cmp.setup({
+        return {
             completion = {
                 completeopt = "menu,menuone,preview",
             },
-            snippet = { -- configure how nvim-cmp interacts with snippet engine
+            snippet = {
                 expand = function(args)
                     luasnip.lsp_expand(args.body)
                 end,
             },
             mapping = cmp.mapping.preset.insert({
-                ["<C-p>"] = cmp.mapping.select_prev_item(),
                 ["<C-n>"] = cmp.mapping.select_next_item(),
+                ["<C-p>"] = cmp.mapping.select_prev_item(),
                 ["<C-b>"] = cmp.mapping.scroll_docs(-4),
                 ["<C-f>"] = cmp.mapping.scroll_docs(4),
                 ["<C-e>"] = cmp.mapping.abort(),
@@ -43,14 +43,15 @@ return {
                 { name = "luasnip" },
                 { name = "buffer" },
                 { name = "path" },
-                -- { name = "nvim_lsp_signature_help" },
             }),
             formatting = {
                 format = lspkind.cmp_format({
-                    maxwidth = 50,
+                    mode = "symbol",
+                    maxwidth = { menu = 50, abbr = 50 },
                     ellipsis_char = "...",
+                    show_labelDetails = true,
                 }),
             },
-        })
+        }
     end,
 }

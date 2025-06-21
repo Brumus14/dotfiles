@@ -5,7 +5,7 @@ local treesitter = require("plugins.treesitter")
 local oil = require("plugins.oil")
 local conform = require("plugins.conform")
 local which_key = require("plugins.which-key")
-local notifier = require("plugins.notifier")
+local nvim_notify = require("plugins.nvim-notify")
 local nvim_cmp = require("plugins.nvim-cmp")
 local dashboard_nvim = require("plugins.dashboard-nvim")
 local indent_blankline = require("plugins.indent-blankline")
@@ -35,7 +35,7 @@ return {
     oil,
     conform,
     which_key,
-    notifier,
+    nvim_notify,
     nvim_cmp,
     dashboard_nvim,
     indent_blankline,

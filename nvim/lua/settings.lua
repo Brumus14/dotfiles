@@ -65,3 +65,20 @@ vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
 vim.g.nvim_opened_dir = vim.fn.expand("%:p:h")
+
+-- vim.api.nvim_create_autocmd("BufWritePost", {
+--     pattern = "*.asm, *.s",
+--     callback = function()
+--         vim.cmd("retab")
+--     end,
+-- })
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "r",
+    callback = function()
+        vim.opt_local.tabstop = 2
+        vim.opt_local.shiftwidth = 2
+        vim.opt_local.softtabstop = 2
+        vim.opt_local.expandtab = true
+    end,
+})

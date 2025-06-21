@@ -9,8 +9,10 @@ return {
             javascript = { "biome" },
             java = { "clang_format" },
             tex = { "latexindent" },
-            asm = { "asmfmt" },
+            -- asm = { "asmfmt" },
             go = { "goimports", "gofmt" },
+            zig = { "zigfmt" },
+            r = { "air" },
         },
         formatters = {
             stylua = {
@@ -19,6 +21,11 @@ return {
             clang_format = {
                 prepend_args = {
                     "--style=file:/home/brumus/.config/.clang-format",
+                },
+            },
+            air = {
+                env = {
+                    STYLER_STYLE = "/home/brumus/.config/style.r",
                 },
             },
         },
