@@ -9,7 +9,8 @@
     id=$(echo $monitor | jq -r '.id')
 -%>
 (defvar workspace<%= $id %> "1")
-(defpoll brightness_level<%= $id %> :interval "1s" "~/Documents/Scripts/BrightnessControl.sh g <%= $name %>")
+;; (defpoll brightness_level<%= $id %> :interval "1s" "~/Documents/Scripts/BrightnessControl.sh g <%= $name %>")
+(defvar brightness_level<%= $id %> 100)
 
 (defwindow bar<%= $id %>
                :monitor <%= $id %>
