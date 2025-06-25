@@ -5,7 +5,8 @@
 
 (defvar workspace0 "1")
 ;; (defpoll brightness_level0 :interval "1s" "~/Documents/Scripts/BrightnessControl.sh g HDMI-A-1")
-(defvar brightness_level0 100)
+(defvar brightness_level0 32
+)
 
 (defwindow bar0
                :monitor 0
@@ -68,7 +69,8 @@
 )
 (defvar workspace1 "1")
 ;; (defpoll brightness_level1 :interval "1s" "~/Documents/Scripts/BrightnessControl.sh g DP-3")
-(defvar brightness_level1 100)
+(defvar brightness_level1 21
+)
 
 (defwindow bar1
                :monitor 1
