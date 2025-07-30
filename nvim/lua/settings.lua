@@ -51,13 +51,6 @@ vim.diagnostic.config({
 --     end,
 -- })
 
-vim.api.nvim_create_autocmd({ "BufEnter", "BufDelete" }, {
-    callback = function()
-        local buffer_count = #vim.fn.getbufinfo({ buflisted = true })
-        vim.opt.showtabline = buffer_count > 1 and 2 or 0
-    end,
-})
-
 vim.o.foldcolumn = "0"
 vim.o.foldlevel = 99
 vim.o.foldlevel = 99
@@ -80,5 +73,12 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.opt_local.shiftwidth = 2
         vim.opt_local.softtabstop = 2
         vim.opt_local.expandtab = true
+    end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "*",
+    callback = function()
+        vim.opt_local.formatoptions:remove("o")
     end,
 })

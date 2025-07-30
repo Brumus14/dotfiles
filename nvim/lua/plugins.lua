@@ -21,11 +21,16 @@ local hover = require("plugins.hover")
 local lsp_signature = require("plugins.lsp-signature")
 local sneak = require("plugins.sneak")
 local vim_signature = require("plugins.vim-signature")
-local bufferline = require("plugins.bufferline")
+-- local bufferline = require("plugins.bufferline")
 -- local marks = require("plugins.marks")
 local comment = require("plugins.comment")
 local nvim_ufo = require("plugins.nvim-ufo")
 local persistence = require("plugins.persistence")
+local vim_be_good = require("plugins.vim-be-good")
+local todo_comments = require("plugins.todo-comments")
+local nvim_ts_autotag = require("plugins.nvim-ts-autotag")
+local nvim_web_devicons = require("plugins.nvim-web-devicons")
+local snipe = require("plugins.snipe")
 
 return {
     telescope,
@@ -51,9 +56,14 @@ return {
     lsp_signature,
     sneak,
     vim_signature,
-    bufferline,
+    -- bufferline,
     -- marks,
     comment,
     nvim_ufo,
     persistence,
+    vim_be_good,
+    todo_comments,
+    nvim_ts_autotag,
+    nvim_web_devicons,
+    snipe,
 }

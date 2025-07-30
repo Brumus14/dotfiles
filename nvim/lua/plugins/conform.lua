@@ -13,6 +13,7 @@ return {
             go = { "goimports", "gofmt" },
             zig = { "zigfmt" },
             r = { "air" },
+            html = { "prettier" },
         },
         formatters = {
             stylua = {
