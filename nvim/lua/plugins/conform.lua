@@ -19,11 +19,11 @@ return {
             stylua = {
                 prepend_args = { "--indent-type", "Spaces" },
             },
-            clang_format = {
-                prepend_args = {
-                    "--style=file:/home/brumus/.config/.clang-format",
-                },
-            },
+            -- clang_format = {
+            --     prepend_args = {
+            --         "--style=file:/home/brumus/.config/.clang-format",
+            --     },
+            -- },
             air = {
                 env = {
                     STYLER_STYLE = "/home/brumus/.config/style.r",
