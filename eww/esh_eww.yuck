@@ -9,8 +9,8 @@
     id=$(echo $monitor | jq -r '.id')
 -%>
 (defvar workspace<%= $id %> "1")
-;; (defpoll brightness_level<%= $id %> :interval "1s" "~/Documents/Scripts/BrightnessControl.sh g <%= $name %>")
-(defvar brightness_level<%= $id %> <% ddcutil --display=$(($id + 1)) getvcp 10 | sed -n 's/.*current value = *\([0-9]*\).*/\1/p' %>)
+(defvar brightness_level<%= $id %> <% ~/Documents/Scripts/BrightnessControl.sh g $name %>)
+<%# (defvar brightness_level<= $id > < ddcutil --display=$(($id + 1)) getvcp 10 | sed -n 's/.*current value = *\([0-9]*\).*/\1/p' >) -%>
 
 (defwindow bar<%= $id %>
                :monitor <%= $id %>

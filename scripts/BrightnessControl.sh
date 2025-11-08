@@ -9,17 +9,28 @@ if [ "$monitor_name" == "" ]; then
 fi
 
 monitor_id=$(echo "$monitor_data" | jq -r ".[] | select(.name == \"$monitor_name\") | .id")
-ddcutil_id=$((monitor_id + 1))
+# This needs to be like dynamic
+ddcutil_id=1
 
 if [ "$monitor_name" == "eDP-1" ]; then
     if [ "$action" == "g" ]; then
-        light -G
+        printf "%.0f\n" $(light -G)
     elif [ "$action" == "-" ]; then
         sudo light -U 5
+        brightness_level=$(eww get brightness_level$monitor_id)
+        new_brightness_level=$(($brightness_level - 5 < 0 ? 0 : $brightness_level - 5))
+        echo $new_brightness_level
+        eww update brightness_level$monitor_id=$new_brightness_level
     elif [ "$action" == "+" ]; then
         sudo light -A 5
+        brightness_level=$(eww get brightness_level$monitor_id)
+        new_brightness_level=$(($brightness_level + 5 > 100 ? 100 : $brightness_level + 5))
+        eww update brightness_level$monitor_id=$new_brightness_level
     else
-        sudo light -S "$action"
+        brightness_level=$(($action > 100 ? 100 : $action))
+        brightness_level=$(($brightness_level < 0 ? 0 : $brightness_level))
+        eww update brightness_level$monitor_id=$brightness_level
+        sudo light -S "$brightness_level"
     fi
 else
     if [ "$action" == "g" ]; then
