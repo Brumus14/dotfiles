@@ -59,6 +59,7 @@ return {
             "saadparwaiz1/cmp_luasnip",
         },
         opts = function()
+            local luasnip = require("luasnip")
             local cmp = require("cmp")
 
             return {
@@ -68,8 +69,41 @@ return {
                     end,
                 },
                 mapping = cmp.mapping.preset.insert({
-                    ["<c-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-                    ["<c-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+                    -- ["<c-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+                    -- ["<c-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+                    ["<c-e>"] = cmp.mapping.abort(),
+                    ["<cr>"] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            if luasnip.expandable() then
+                                luasnip.expand()
+                            else
+                                cmp.confirm({
+                                    select = true,
+                                })
+                            end
+                        else
+                            fallback()
+                        end
+                    end),
+                    ["<tab>"] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.select_next_item()
+                        elseif luasnip.locally_jumpable(1) then
+                            luasnip.jump(1)
+                        else
+                            fallback()
+                        end
+                    end, { "i", "s" }),
+
+                    ["<s-tab>"] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.select_prev_item()
+                        elseif luasnip.locally_jumpable(-1) then
+                            luasnip.jump(-1)
+                        else
+                            fallback()
+                        end
+                    end, { "i", "s" }),
                 }),
                 sources = cmp.config.sources({
                     { name = "luasnip" },
@@ -103,6 +137,19 @@ return {
         dependencies = { "javiorfo/nvim-nyctophilia" },
         lazy = true,
         ft = "plantuml",
+        opts = {},
+    },
+    {
+        "lervag/vimtex",
+        lazy = false,
+        init = function()
+            vim.g.vimtex_view_method = "zathura"
+        end,
+    },
+    {
+        "m4xshen/hardtime.nvim",
+        lazy = false,
+        dependencies = { "MunifTanjim/nui.nvim" },
         opts = {},
     },
 }

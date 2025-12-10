@@ -2,7 +2,12 @@ return {
     {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
-        opts = {},
+        opts = {
+            scope = {
+                show_start = false,
+                show_end = false,
+            },
+        },
     },
     {
         "nvim-mini/mini.icons",
@@ -23,4 +28,20 @@ return {
             require("alpha").setup(require("alpha.themes.dashboard").config)
         end,
     },
+    -- {
+    --     "rcarriga/nvim-notify",
+    --     config = function()
+    --         local notify = require("notify")
+    --
+    --         notify.setup({
+    --             render = "wrapped-compact",
+    --             stages = "fade_in_slide_out",
+    --             minimum_width = 30,
+    --             top_down = false,
+    --             timeout = 2000,
+    --         })
+    --
+    --         vim.notify = notify
+    --     end,
+    -- },
 }
