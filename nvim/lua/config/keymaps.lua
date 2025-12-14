@@ -40,6 +40,10 @@ map({ "n", "o", "x" }, "s", function()
     require("flash").jump()
 end)
 
+map({ "o" }, "r", function()
+    require("flash").remote()
+end)
+
 map("n", "<leader>cm", "<cmd>Mason<cr>")
 map("n", "<leader>l", "<cmd>Lazy<cr>")
 
