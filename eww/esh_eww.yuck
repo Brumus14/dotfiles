@@ -1,5 +1,5 @@
-(defpoll cpu_usage :interval "0.5s" "bash ~/Documents/Scripts/CPUUsage.sh")
-(defpoll memory_usage :interval "0.5s" "bash ~/Documents/Scripts/MemoryUsage.sh")
+(defpoll cpu_usage :interval "0.5s" "bash /home/brumus/.config/scripts/CPUUsage.sh")
+(defpoll memory_usage :interval "0.5s" "bash /home/brumus/.config/scripts/MemoryUsage.sh")
 (defpoll battery_level :interval "0.5s" "cat /sys/class/power_supply/BAT0/capacity")
 (defvar volume_level "100")
 
@@ -9,7 +9,7 @@
     id=$(echo $monitor | jq -r '.id')
 -%>
 (defvar workspace<%= $id %> "1")
-(defvar brightness_level<%= $id %> <% ~/Documents/Scripts/BrightnessControl.sh g $name %>)
+(defvar brightness_level<%= $id %> <% /home/brumus/.config/scripts/BrightnessControl.sh g $name %>)
 <%# (defvar brightness_level<= $id > < ddcutil --display=$(($id + 1)) getvcp 10 | sed -n 's/.*current value = *\([0-9]*\).*/\1/p' >) -%>
 
 (defwindow bar<%= $id %>
@@ -22,7 +22,6 @@
                          )
                :stacking "bottom"
                :exclusive true
-               :focusable false
                (centerbox :class "bar"
                           :orientation "h"
                           (left)
@@ -52,7 +51,7 @@
               :value {brightness_level<%= $id %>}
               :min 0
               :max 100
-              :onchange "~/Documents/Scripts/BrightnessControl.sh {} <%= $name %>"
+              :onchange "/home/brumus/.config/scripts/BrightnessControl.sh {} <%= $name %>"
        )
   )
 )
