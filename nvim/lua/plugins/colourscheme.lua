@@ -7,4 +7,9 @@ return {
             vim.cmd("colorscheme gruvbox")
         end,
     },
+    {
+        "sainnhe/gruvbox-material",
+        lazy = false,
+        priority = 1000,
+    },
 }

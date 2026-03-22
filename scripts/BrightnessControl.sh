@@ -9,7 +9,7 @@ if [ "$monitor_name" == "" ]; then
 fi
 
 monitor_id=$(echo "$monitor_data" | jq -r ".[] | select(.name == \"$monitor_name\") | .id")
-ddcutil_id=$((monitor_id + 1))
+ddcutil_id=$((monitor_id))
 
 if [ "$monitor_name" == "eDP-1" ]; then
     if [ "$action" == "g" ]; then

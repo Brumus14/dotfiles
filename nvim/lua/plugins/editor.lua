@@ -38,6 +38,7 @@ return {
     },
     {
         "folke/flash.nvim",
+        -- dir = "/home/brumus/.config/nvim/lua/flash.nvim",
         event = "VeryLazy",
         opts = {},
     },
@@ -69,26 +70,12 @@ return {
                     end,
                 },
                 mapping = cmp.mapping.preset.insert({
-                    -- ["<c-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-                    -- ["<c-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+                    ["<c-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+                    ["<c-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
                     ["<c-e>"] = cmp.mapping.abort(),
-                    ["<cr>"] = cmp.mapping(function(fallback)
-                        if cmp.visible() then
-                            if luasnip.expandable() then
-                                luasnip.expand()
-                            else
-                                cmp.confirm({
-                                    select = true,
-                                })
-                            end
-                        else
-                            fallback()
-                        end
-                    end),
+                    ["<c-y>"] = cmp.mapping.confirm({ select = true }),
                     ["<tab>"] = cmp.mapping(function(fallback)
-                        if cmp.visible() then
-                            cmp.select_next_item()
-                        elseif luasnip.locally_jumpable(1) then
+                        if luasnip.locally_jumpable(1) then
                             luasnip.jump(1)
                         else
                             fallback()
@@ -96,9 +83,7 @@ return {
                     end, { "i", "s" }),
 
                     ["<s-tab>"] = cmp.mapping(function(fallback)
-                        if cmp.visible() then
-                            cmp.select_prev_item()
-                        elseif luasnip.locally_jumpable(-1) then
+                        if luasnip.locally_jumpable(-1) then
                             luasnip.jump(-1)
                         else
                             fallback()
@@ -150,6 +135,14 @@ return {
         "m4xshen/hardtime.nvim",
         lazy = false,
         dependencies = { "MunifTanjim/nui.nvim" },
+        opts = {},
+    },
+    {
+        "leath-dub/snipe.nvim",
+        opts = {},
+    },
+    {
+        "sakhnik/nvim-gdb",
         opts = {},
     },
 }

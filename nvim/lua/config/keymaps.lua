@@ -7,7 +7,7 @@ map("n", "<c-k>", "<c-w>k")
 map("n", "<c-l>", "<c-w>l")
 
 -- Escape clear highlights
-map("n", "<esc>", "<cmd>noh<cr>")
+map("n", "<leader><esc>", "<cmd>noh<cr>")
 
 -- Terminal
 map("t", "<esc>", "<c-\\><c-n>")
@@ -82,3 +82,19 @@ map("n", "<leader>su", "<cmd>UndotreeToggle<cr>")
 map("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>")
 map("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>")
 map("n", "<leader>cs", "<cmd>Trouble symbols toggle<cr>")
+
+-- Snipe
+map("n", "<leader>gb", require("snipe").open_buffer_menu, { desc = "Snipe Buffer" })
+
+map("n", "<leader>w", function()
+    vim.wo.wrap = not vim.wo.wrap
+    vim.wo.linebreak = not vim.wo.linebreak
+end, { desc = "Toggle Wrapping" })
+
+map("n", "<leader>r", function()
+    vim.o.colorcolumn = vim.o.colorcolumn == "" and "80" or ""
+end, { desc = "Toggle Ruler" })
+
+map("n", "<leader>v", function()
+    vim.o.virtualedit = vim.o.virtualedit == "" and "all" or ""
+end, { desc = "Toggle Virtual Edit" })

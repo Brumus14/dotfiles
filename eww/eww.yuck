@@ -4,7 +4,7 @@
 (defvar volume_level "100")
 
 (defvar workspace0 "1")
-(defvar brightness_level0 99
+(defvar brightness_level0 100
 )
 
 (defwindow bar0
@@ -46,7 +46,7 @@
               :value {brightness_level0}
               :min 0
               :max 100
-              :onchange "/home/brumus/.config/scripts/BrightnessControl.sh {} HDMI-A-1"
+              :onchange "/home/brumus/.config/scripts/BrightnessControl.sh {} eDP-1"
        )
   )
 )

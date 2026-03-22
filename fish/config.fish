@@ -10,6 +10,7 @@ end
 
 set -x PATH $HOME/.cargo/bin $PATH
 set -x PATH $HOME/go/bin $PATH
+set -x PATH $HOME/.local/share/gem/ruby/*/bin $PATH
 
 # Created by `pipx` on 2023-06-20 20:54:03
 set PATH $PATH /home/brumus/.local/bin
