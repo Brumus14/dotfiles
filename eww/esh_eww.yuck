@@ -93,8 +93,7 @@
 
 (defwidget workspace-button [n]
   (button :class "workspace-button"
-          ; :onclick "hyprctl dispatch workspace r~${n}"
-          :onclick "hyprctl dispatch split-workspace ${n}"
+          :onclick "hyprctl dispatch 'hl.plugin.split_monitor_workspaces.workspace(${n})'"
           "${n}"
   )
 )

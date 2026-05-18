@@ -1,0 +1,27 @@
+hl.config({
+    plugin = {
+        split_monitor_workspaces = {
+            count = 9,
+            keep_focused = 1,
+            enable_persistent_workspaces = 1,
+        },
+
+        -- dynamic-cursors {
+        --     enabled=true
+        --     mode=tilt
+        --
+        --     shake {
+        --         enabled=false
+        --     }
+        -- }
+
+        -- touch_gestures {
+        --     sensitivity=4.0
+        --     workspace_swipe_fingers=3
+        --     workspace_swipe_edge=d
+        --     # long_press_delay=400
+        --     # resize_on_border_long_press=true
+        --     edge_margin=10
+        -- }
+    },
+})
