@@ -3,9 +3,7 @@ return {
     lazy = false,
     build = ":TSUpdate",
     config = function()
-        local treesitter = require("nvim-treesitter.configs")
-
-        treesitter.setup({
+        require("nvim-treesitter").setup({
             ensure_installed = {
                 "c",
                 "lua",

@@ -117,14 +117,6 @@ return {
         opts = {},
     },
     {
-        "javiorfo/nvim-soil",
-        tag = "0.2.0",
-        dependencies = { "javiorfo/nvim-nyctophilia" },
-        lazy = true,
-        ft = "plantuml",
-        opts = {},
-    },
-    {
         "lervag/vimtex",
         lazy = false,
         init = function()
