@@ -37,7 +37,13 @@ hl.bind("SUPER+CTRL+l", hl.dsp.window.move({ direction = "r" }))
 hl.bind("SUPER+ALT+9", function()
     smw.change_monitor_silent("prev")
 end)
+hl.bind("SUPER+SHIFT+ALT+9", function()
+    smw.change_monitor_silent("prev")
+end)
 hl.bind("SUPER+ALT+0", function()
+    smw.change_monitor_silent("next")
+end)
+hl.bind("SUPER+SHIFT+ALT+0", function()
     smw.change_monitor_silent("next")
 end)
 
@@ -58,19 +64,15 @@ hl.bind("SUPER+SHIFT+k", hl.dsp.layout("preselect u"))
 hl.bind("SUPER+SHIFT+l", hl.dsp.layout("preselect r"))
 
 -- Set window mode
-hl.bind(
-    "SUPER+i",
-    hl.dsp.exec_raw(
-        "hyprctl dispatch 'hl.dsp.window.fullscreen({action=\"unset\"})' && hyprctl dispatch 'hl.dsp.window.float({action=\"disable\"})'"
-    )
-)
-hl.bind(
-    "SUPER+o",
-    hl.dsp.exec_raw(
-        "hyprctl dispatch 'hl.dsp.window.fullscreen({action=\"unset\"})' && hyprctl dispatch 'hl.dsp.window.float({action=\"enable\"})'"
-    )
-)
-hl.bind("SUPER+p", hl.dsp.exec_raw("hyprctl dispatch 'hl.dsp.window.fullscreen({action=\"set\"})'"))
+hl.bind("SUPER+i", function()
+    hl.dispatch(hl.dsp.window.fullscreen({ action = "unset" }))
+    hl.dispatch(hl.dsp.window.float({ action = "disable" }))
+end)
+hl.bind("SUPER+o", function()
+    hl.dispatch(hl.dsp.window.fullscreen({ action = "unset" }))
+    hl.dispatch(hl.dsp.window.float({ action = "enable" }))
+end)
+hl.bind("SUPER+p", hl.dsp.window.fullscreen({ action = "set" }))
 
 -- Focus workspace
 -- bind=SUPER,n,workspace,r~1
